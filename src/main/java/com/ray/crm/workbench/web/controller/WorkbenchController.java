@@ -28,13 +28,13 @@ public class WorkbenchController {
     }
 
 /**
- * 方法简介  跳转至工作台主页的首页
+ * 跳转至工作台主页的首页
  *
  * @param 
  * @return java.lang.String
  * @version 1.0.0
  * @author Ray Li
- * @date 2020/5/26 22:27 
+ * @date 2020/5/26 23:11
  */
     @RequestMapping("/workbench/main/toIndex.do")
     public String mainToIndex(){

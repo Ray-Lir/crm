@@ -13,7 +13,7 @@ import java.util.Map;
 public interface UserDao {
 
 /**
- * 方法简介 dao层数据库user信息查询
+ * dao层数据库user信息查询
  *
  * @param map
  * @return com.ray.crm.settings.domain.User 

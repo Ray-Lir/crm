@@ -9,12 +9,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @Description: 登录拦截
+ * @Description: 拦截器
  * @Author: Ray Li
  * @E-mail: ray.lir@outlook.com
  * @Date: 2020/5/26 20:02
  */
 public class LoginInterceptor implements HandlerInterceptor {
+
+    /**
+     * 提前拦截
+     *
+     * @param request
+	 * @param response
+	 * @param handler
+     * @return boolean
+     * @version 1.0.0
+     * @author Ray Li
+     * @date 2020/5/26 23:36
+     */
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 

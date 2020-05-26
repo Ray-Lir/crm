@@ -13,6 +13,7 @@ import javax.security.auth.login.LoginException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.Map;
 
 /**
@@ -29,7 +30,7 @@ public class UserController {
     private UserService userService;
 
     /**
-     * 方法简介 获取cookie并登录
+     *  获取cookie并登录
      *
      * @param loginAct
      * @param loginPwd
@@ -79,7 +80,7 @@ public class UserController {
 
 
     /**
-     * 方法简介 检测是否保存cookie并跳转至登录页
+     *  检测是否保存cookie并跳转至登录页
      *
      * @param request
      * @return java.lang.String
@@ -155,5 +156,43 @@ public class UserController {
         }
 
     }
+
+    /**
+     * 退出登录
+     *
+     * @param session
+	 * @param response
+     * @return java.lang.String
+     * @version 1.0.0
+     * @author Ray Li
+     * @date 2020/5/26 23:35
+     */
+    @RequestMapping("/logout.do")
+    public String logout(HttpSession session, HttpServletResponse response) {
+
+        //将session对象销毁
+        session.invalidate();
+
+        /**
+
+            Cookie类型没有提供直接销毁的方法
+            可以使用新的cookie来代替老的cookie方法将老的cookie对象进行销毁的操作
+            新cookie将保存时间设置为0，将相当于是cookie的销毁操作了
+
+         */
+        Cookie cookie1 = new Cookie("loginAct", null);
+        Cookie cookie2 = new Cookie("loginPwd", null);
+        cookie1.setPath("/");
+        cookie2.setPath("/");
+        cookie1.setMaxAge(0);
+        cookie2.setMaxAge(0);
+
+        response.addCookie(cookie1);
+        response.addCookie(cookie2);
+
+        return "/login";
+
+    }
+
 
 }

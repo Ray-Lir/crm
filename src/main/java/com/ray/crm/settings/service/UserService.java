@@ -13,7 +13,7 @@ import javax.security.auth.login.LoginException;
 public interface UserService {
     
     /**
-     * 方法简介 servic层账户信息核验
+     * servic层账户信息核验
      *
      * @param loginAct
 	 * @param loginPwd

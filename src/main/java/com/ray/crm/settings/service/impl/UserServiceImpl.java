@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService {
     private UserDao userDao;
     
     /**
-     * 方法简介 service层进行账户信息核验
+     * service层进行账户信息核验
      *
      * @param loginAct
 	 * @param loginPwd

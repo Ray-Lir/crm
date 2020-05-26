@@ -30,6 +30,7 @@
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
             <mvc:exclude-mapping path="/settings/user/login.do"/>
+            <mvc:exclude-mapping path="/settings/user/toLogin.do"/>
             <bean class="com.ray.crm.interceptor.LoginInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
